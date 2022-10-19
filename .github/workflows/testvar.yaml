@@ -1,0 +1,14 @@
+name: test-vars
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  display-variables:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:        
+    - name: Use variables
+      run: |
+        echo "repo variable : ${{ vars.REPOVAR1 }}"
+        echo "org variable : ${{ vars.ORGVAR1 }}"
